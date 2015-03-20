@@ -1,0 +1,20 @@
+# Assignment-3 Problem 3 a
+#This code takes 3 inputted values of a polynomial equation and enters them into the quadratic equation printing the two solutions
+
+from math import sqrt
+
+print 'Assuming your equation is in the form: ax^2 + bx + c'
+a = float(input("Enter a: "))
+b = float(input("Enter b: "))
+c = float(input("Enter c: "))
+
+d = (b**2.0-4.0*a*c)**(1/2.0)
+s1 = (-1.0*b-d)/(2.0*a)
+s2 = (-1.0*b+d)/(2.0*a)
+
+print 'The solutions are: ' ,s1, 'and' ,s2
+
+q1=(2.0*c)/((-1.0*b)+d)
+q2=(2.0*c)/((-1.0*b)-d)
+
+print 'Using the second method, the solutions are: ' ,q1, 'and' ,q2
