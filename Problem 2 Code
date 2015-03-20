@@ -1,0 +1,86 @@
+# Assignment-3 Problem 2
+#This code observes the differnt precisions resulted from computing e^-1 four different ways, plotting each result, then overplotting all four
+
+from math import exp, log, factorial
+from numpy import linspace, zeros
+from pylab import plot, show, xlabel, ylabel, xlim, ylim, title, yscale
+x=linspace(0,100,21)
+
+#Process (a)
+a=zeros(21,float)
+i=0
+
+for t in range(0,100,5):
+    a[i]=exp(-t)
+    i+=1
+
+plot(x,a, "b--")
+title("Process A")
+yscale('log')
+show()
+
+
+#Process (b)
+
+
+z=0.0
+i=0.0
+b=zeros(21,float)
+for z in range(0,100,5):
+    s=1.0
+    n=1.0
+    for n in range(1,100,10):
+        s=s+(-1.0**n)*(z**n)/(factorial(n))
+    b[i]=s
+    i+=1
+    
+plot(x,b, "r--")
+title("Process B")
+yscale('log')
+ylim(ymin=10e-42, ymax=1)
+show()
+
+
+#Process (c)
+q=0.0
+i=0.0
+c=zeros(21,float)
+for q in range(0,100,5):
+    s=1.0
+    n=1.0
+    for n in range(1,100,10):
+        s=-1.0*s*(q/n)   
+    c[i]=s
+    i+=1
+plot(x,c, "y--")
+title("Process C")
+yscale('log')
+ylim(ymin=10e-42, ymax=1)
+show()
+    
+
+#Process (d)
+d=zeros(21, float)
+i=0.0
+t=0.0
+for t in range(0,100,5):
+    d[i]=1.0/exp(t)
+    i+=1
+plot(x,d, "g--")
+title("Process D")
+yscale('log')
+ylim(ymin=10e-42, ymax=1)
+show()
+
+
+
+plot(x,a, "b--")
+plot(x,b, "r--")
+plot(x,c, "y--")
+plot(x,d, "g--")
+title("Processes A, B, C, & D")
+yscale('log')
+ylim(ymin=10e-42, ymax=1)
+show()
+
+
