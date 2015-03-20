@@ -1,0 +1,13 @@
+# Assignment-3 Problem 1 
+#Code uses values in a .txt file to make a density plot
+
+from numpy import loadtxt
+from pylab import imshow, show, hot, title, colorbar
+
+data=loadtxt("stm.txt", float)
+
+imshow(data)
+title("Height of the surface of Silicon")
+hot()
+colorbar()
+show()
